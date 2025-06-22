@@ -6,7 +6,7 @@ class Node(VGroup):
         self.value = value
         self.show_prev = show_prev
         self.box = Circle(radius=0.5, color=WHITE)
-        self.text = Text(str(value)).move_to(self.box.get_center())
+        self.text = Text(str(value), font_size=28).move_to(self.box.get_center())
         self.add(self.box, self.text)
         self.next_arrow = Arrow(self.box.get_right(), self.box.get_right() + RIGHT * 0.8, buff=0.1, color=YELLOW)
         self.add(self.next_arrow)
