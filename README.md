@@ -15,7 +15,7 @@ This project provides animated visualizations of stack operations and the valid 
 ## Setup
 1. Clone the repository:
    ```sh
-   git clone <your-repo-url>
+   git clone https://github.com/tdlinh2712/code-animation.git
    cd code-animation
    ```
 2. Install dependencies:
