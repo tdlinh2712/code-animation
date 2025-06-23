@@ -35,7 +35,16 @@ class LinkedList:
             index = len(self.nodes)
         self.nodes.insert(index, node)
         # Arrange nodes visually
-        self.visual_list = VGroup(*self.nodes).arrange(RIGHT, buff=0.7)
+        # Dynamically adjust spacing to fit all nodes within the screen width
+        max_width = config["frame_width"] * 0.9  # leave some margin
+        node_width = 1.0  # Approximate width per node (circle + arrow + buffer)
+        n = len(self.nodes)
+        if n > 1:
+            # Calculate buffer so that total width fits max_width
+            buff = min(0.4, max(0.2, (max_width - n * node_width) / (n - 1)))
+        else:
+            buff = 0.7
+        self.visual_list = VGroup(*self.nodes).arrange(RIGHT, buff=buff)
         # Update arrows
         for i, n in enumerate(self.nodes):
             n.set_next_visible(i < len(self.nodes) - 1)
