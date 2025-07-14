@@ -2,8 +2,8 @@ from manim import *
 from dsa.linked_list import LinkedList
 
 # === Editable Input ===
-node_values = [3, 2, 0, -4, 5, 1]  # List of node values
-cycle_pos = 2  # Index to which the last node points (set to None for no cycle)
+node_values = [3, 2, 0, -4, 5, 1, 'null']  # List of node values
+cycle_pos = None  # Index to which the last node points (set to None for no cycle)
 
 def pointer_move_anims(pointer, label, from_idx, to_idx, nodes, cycle_path=None, is_cycle_move=False, label_offset=UP*0.1, pointer_offset=UP*0.3):
     """
